@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject  } from '@angular/core';
 import {FlexLayoutModule} from "@angular/flex-layout"
 import {MatCardModule} from '@angular/material/card'
 import {FormsModule} from "@angular/forms"
@@ -8,7 +8,9 @@ import {MatIconModule}  from "@angular/material/icon"
 import {MatButtonModule} from "@angular/material/button"
 import { Client } from './client'
 import {Cliente} from '../cliente'
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import {NgxMaskDirective, provideNgxMask} from 'ngx-mask'
+import{MatSnackBar} from "@angular/material/snack-bar"
 
 @Component({
   selector: 'app-cadastro',
@@ -20,18 +22,22 @@ import { ActivatedRoute } from '@angular/router';
     MatLabel,
     MatInputModule,
     MatIconModule,
-    MatButtonModule] ,
+    MatButtonModule,
+  NgxMaskDirective] ,
+  providers: provideNgxMask(),
   templateUrl: './cadastro.html',
   styleUrl: './cadastro.scss',
 })
 export class Cadastro {
 client : Client = Client.newClient();
 atualizar: boolean = false;
+snack: MatSnackBar = inject(MatSnackBar);
 
 constructor(
   
   private service : Cliente,
-private route:ActivatedRoute) {
+private route:ActivatedRoute,
+private router: Router) {
 
 }
 ngOnInit(){
@@ -50,12 +56,24 @@ ngOnInit(){
   });
 }
 salvar(){  
+  if(!this.atualizar){
  this.service.salvar(this.client);
+ this.mostrarMsg("Salvo com sucesso")
  this.limpar()
+} else {
+  this.service.atualizar(this.client);
+  this.router.navigate(['/consulta']);
+  this.mostrarMsg("atualizado com sucesso")
+}
+
 }
 
 limpar(){ 
   this.client = Client.newClient();
+ }
+
+ mostrarMsg(msg:string ){
+  this.snack.open(msg, "Ok")
  }
 }
 

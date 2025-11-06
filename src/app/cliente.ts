@@ -16,10 +16,22 @@ export class Cliente {
     localStorage.setItem(Cliente.REPO_CLIENTES, JSON.stringify(storage));
     
 }
+atualizar(client: Client){
+    const clientes = this.obterStorage();
+    clientes.forEach(c => {
+      if(c.id === client.id){
+        Object.assign(c, client);
+      }
+    });
+    localStorage.setItem(Cliente.REPO_CLIENTES, JSON.stringify(clientes));
+  }
+
+
   deletarCliente(id: string){
     let clientes = this.obterStorage();
     clientes = clientes.filter(c => c.id !== id);
     localStorage.setItem(Cliente.REPO_CLIENTES, JSON.stringify(clientes));
+    
   }
 
 

@@ -1,0 +1,43 @@
+.delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: 10px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #fff;
+    background: red; // vermelho de destaque
+    transform: scale(1.2);
+  }
+
+}
+.edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: 10px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #fff;
+    background: rgb(34, 0, 255); // vermelho de destaque
+    transform: scale(1.2);
+    
+  }
+
+}
