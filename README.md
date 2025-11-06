@@ -44,11 +44,17 @@ A interface usa componentes mat-card e mat-form-field, garantindo um design mode
 🧱 Funcionalidades
 
 ✅ Campo de nome com validação básica
+
 ✅ Layout responsivo com Flex Layout (fxLayout, fxFlex)
+
 ✅ Estrutura visual com Angular Material
+
 ✅ Integração com Router (navigate)
+
 ✅ Feedback com MatSnackBar
+
 ✅ Base pronta para adicionar novos campos (e-mail, telefone, etc.)
+
 
 Exemplo de Template:
 
@@ -80,5 +86,7 @@ Acesse o app em:
 👨‍💻 Autor
 
 Leonardo Silva
+
 💼 Desenvolvedor Front-End
+
 📧 leonardoo.silvaa2012@gmail.com
