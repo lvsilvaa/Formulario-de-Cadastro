@@ -8,10 +8,15 @@ O objetivo é demonstrar como criar interfaces modernas, responsivas e integrada
 🧠 Principais Tecnologias:
 
 🅰️ Angular 17+
+
 💅 Angular Material (MatCard, MatFormField, MatInput, MatSnackBar)
+
 📐 Angular Flex Layout (para responsividade)
+
 ⚙️ TypeScript
+
 🧪 Karma + Jasmine (testes unitários)
+
 🐳 Docker (opcional para execução isolada)
 
 🖥️ Preview
@@ -24,9 +29,17 @@ A interface usa componentes mat-card e mat-form-field, garantindo um design mode
 📂 Estrutura do módulo
 /src/app/cadastro/
 │
-├── cadastro.html         # Template do formulário
-├── cadastro.ts           # Lógica do componente Angular
-├── cadastro.spec.ts      # Testes unitários
+├── cadastro.html    
+
+# Template do formulário
+
+├── cadastro.ts    
+
+# Lógica do componente Angular
+
+├── cadastro.spec.ts 
+
+# Testes unitários
 
 🧱 Funcionalidades
 
