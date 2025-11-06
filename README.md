@@ -1,59 +1,71 @@
-# FormularioConsulta
+🧾 README.md — Formulário de Cadastro (Angular + Material)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
+📋 Descrição
 
-## Development server
+Este projeto é um formulário de cadastro de clientes, desenvolvido com Angular, TypeScript e Angular Material, aplicando boas práticas de layout e componentização.
+O objetivo é demonstrar como criar interfaces modernas, responsivas e integradas a serviços de notificação e navegação usando as ferramentas do Angular.
 
-To start a local development server, run:
+🧠 Principais Tecnologias:
 
-```bash
+🅰️ Angular 17+
+💅 Angular Material (MatCard, MatFormField, MatInput, MatSnackBar)
+📐 Angular Flex Layout (para responsividade)
+⚙️ TypeScript
+🧪 Karma + Jasmine (testes unitários)
+🐳 Docker (opcional para execução isolada)
+
+🖥️ Preview
+A interface usa componentes mat-card e mat-form-field, garantindo um design moderno e consistente com o Material Design.
+
+📸 Exemplo da interface do formulário:
+
+A interface usa componentes mat-card e mat-form-field, garantindo um design moderno e consistente com o Material Design.
+
+📂 Estrutura do módulo
+/src/app/cadastro/
+│
+├── cadastro.html         # Template do formulário
+├── cadastro.ts           # Lógica do componente Angular
+├── cadastro.spec.ts      # Testes unitários
+
+🧱 Funcionalidades
+
+✅ Campo de nome com validação básica
+✅ Layout responsivo com Flex Layout (fxLayout, fxFlex)
+✅ Estrutura visual com Angular Material
+✅ Integração com Router (navigate)
+✅ Feedback com MatSnackBar
+✅ Base pronta para adicionar novos campos (e-mail, telefone, etc.)
+
+Exemplo de Template:
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Dados Pessoais</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-form-field class="full-width">
+      <mat-label>Nome: *</mat-label>
+      <input type="text" matInput placeholder="Ex: Leonardo Silva" name="nome" ngModel />
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>
+
+Como executar localmente
+1️⃣ Instale as dependências
+npm install
+
+
+2️⃣ Rode o servidor de desenvolvimento
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acesse o app em:
+👉 http://localhost:4200
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+👨‍💻 Autor
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Leonardo Silva
+💼 Desenvolvedor Front-End
+📧 leonardoo.silvaa2012@gmail.com
