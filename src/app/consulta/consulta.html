@@ -1,0 +1,101 @@
+<div fxLayout="row" fxLayoutAlign="center">
+    <div fxLayout="column" fxFlex="1200px">
+        <form class="mt-60" #buscaForm="ngForm" (ngSubmit)="pesquisar()">
+            <mat-card appearance="outlined">
+                <mat-card-header>
+                    <mat-card-title>Consulta de Usuários</mat-card-title>
+                    </mat-card-header>
+                <mat-card-content fxLayout="mt-20">
+                    <div fxLayout="row" fxLayoutGap="20px">
+                        <div fxLaout="column" fxFlex="950px">
+                        <mat-form-field class="full-width" fxFlex>
+                            <mat-label>Nome: </mat-label>
+                            <input matInput name="nomeBusca" [(ngModel)]="nomeBusca" placeholder="Leonardo">
+                        </mat-form-field>
+                        </div>
+                    </div>
+                      </mat-card-content>
+                      <mat-card-actions>
+                    <div fxLayout="row" fxLayoutAlign="end center" fxFlex>
+                        <div fxLaout="column" >
+                        <div fxLayoutAlign="end center">
+                            <button mat-flat-button color="primary" >
+                                Pesquisar
+                                <mat-icon fontIcon="search"></mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                       
+                    </div>
+                     </mat-card-actions>
+              
+            </mat-card>
+
+        </form>
+
+    </div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center">
+    <div fxLayout="column" fxFlex="1200px" class="mt-20">
+        <mat-card>
+            <mat-card-header appearance="outlined">
+                <mat-card-title>Resultado da Pesquisa</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <table mat-table [dataSource]="listaClientes" class="mat-elevation-z2 full-width">
+                    <!-- Id Column -->
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> Id </th>
+                        <td mat-cell *matCellDef="let cliente"> {{cliente.id}} </td>
+                    </ng-container>
+                    <!-- Nome Column -->
+                    <ng-container matColumnDef="nome">
+                        <th mat-header-cell *matHeaderCellDef> Nome </th>
+                        <td mat-cell *matCellDef="let cliente"> {{cliente.name}} </td>
+                    </ng-container>
+
+                    <!-- Email Column -->
+                    <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef> Email </th>
+                        <td mat-cell *matCellDef="let cliente"> {{cliente.email}} </td>
+                    </ng-container>
+
+                    <!-- CPF Column -->
+                    <ng-container matColumnDef="cpf">
+                        <th mat-header-cell *matHeaderCellDef>CPF</th>
+                        <td mat-cell *matCellDef="let cliente"> {{cliente.cpf}} </td>
+                    </ng-container>
+
+
+                    <!-- DataNascimento Column -->
+                    <ng-container matColumnDef="dataNascimento">
+                        <th mat-header-cell *matHeaderCellDef>Data de Nascimento</th>
+                        <td mat-cell *matCellDef="let cliente"> {{cliente.dataNascimento}} </td>
+                    </ng-container>
+
+                     <ng-container matColumnDef="actions">
+                        <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let cliente"> 
+                        <button type="button" mat-icon-button="edit" color="tertiary" (click)="prepararEdit(cliente.id)">
+                            <mat-icon fontIcon="edit"></mat-icon>
+                        </button>
+                    </td>
+                     </ng-container>
+                       <ng-container matColumnDef="delete">
+                        <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let cliente"> 
+                        <button mat-icon-button color="warn" type="button" (click)="deletarCliente(cliente.id)">
+                            <mat-icon fontIcon="delete"></mat-icon>
+                        </button>
+                    </td>
+                     </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="['id','nome', 'cpf', 'dataNascimento','email', 'actions','delete']"></tr>
+                    <tr mat-row *matRowDef="let row; columns:colunasTable;"></tr>
+                </table>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
