@@ -31,7 +31,7 @@ import {MatSnackBar} from '@angular/material/snack-bar'
 export class Consulta {
   nomeBusca: string = '';
   listaClientes: Client[] = [];
-  colunasTable: string[] = ['id','nome', 'cpf', 'dataNascimento', 'email', "actions", 'delete'];
+  colunasTable: string[] = ['id','nome', 'cpf', 'dataNascimento', 'email', 'municipios',  'uf', "actions", 'delete'];
   deletando: boolean = false;
   snack: MatSnackBar = inject(MatSnackBar);
 

@@ -7,6 +7,8 @@ export class Client {
     cpf?: string;
     dataNascimento?: string;
     deletando: boolean = false;
+    uf?: string;
+    municipios?: string;
 
 
 static newClient(){

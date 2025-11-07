@@ -29,6 +29,16 @@
                         <input type="text" matInput mask="000.000.000-00" placeholder="000.000.000-00" [(ngModel)]="client.cpf" name="cpf"/>
                     </mat-form-field>
                     </div>
+                    <div fxLayout="column" fxFlex="380px">
+                    <mat-form-field class="full-width">
+                        <mat-label>UF *</mat-label>
+                        <mat-select [(value)]="client.uf" (selectionChange)="carregarMunicipios($event)">
+                            <mat-option *ngFor="let uf of estados" [value]="uf.sigla">
+                            {{ uf.sigla }} - {{ uf.nome }}
+                            </mat-option>
+                        </mat-select>
+                        </mat-form-field>
+                    </div>
                     </div>
                      <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
                           <div fxLayout="column" fxFlex="400px">
@@ -36,6 +46,16 @@
                         <mat-label>Data de Nascimento: *</mat-label>
                         <input type="text" mask="00/00/0000" matInput [(ngModel)]="client.dataNascimento" name="dataNascimento"/>
                     </mat-form-field>
+                    </div>
+                    <div fxLayout="column" fxFlex="380px">
+                    <mat-form-field class="full-width">
+                        <mat-label>Municipios *</mat-label>
+                        <mat-select [(value)]="client.municipios">
+                            <mat-option *ngFor="let m of municipios" [value]="m.nome">
+                            {{ m.nome }} 
+                            </mat-option>
+                        </mat-select>
+                        </mat-form-field>
                     </div>
                     </div>
                 </mat-card-content>    
