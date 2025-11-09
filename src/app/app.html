@@ -1,17 +1,19 @@
-<mat-toolbar color="primary">
-  <a routerLink="/">
-  <mat-icon fontIcon="home" ></mat-icon>
-  <span >ASR Brasil Home</span>
-    </a>
+<mat-toolbar class="header">
+  <span>Cadastro de Clientes</span>
   <span class="spacer"></span>
- 
- <a routerLink="/cadastro">
-  <mat-icon fontIcon="feed"></mat-icon>
-  Formulario Cadastro
- </a>
- <a routerLink="/consulta">
-  <mat-icon fontIcon="search"></mat-icon>
-  Consulta
- </a>
+<a routerLink="">
+    <mat-icon fontIcon="home"></mat-icon>
+    Home
+  </a>
+  <a routerLink="/cadastro">
+    <mat-icon fontIcon="feed"></mat-icon>
+    Formulário
+  </a>
+  <a routerLink="/consulta">
+    <mat-icon fontIcon="search"></mat-icon>
+    Consulta
+  </a>
 </mat-toolbar>
+<!-- CONTEÚDO PRINCIPAL -->
+
 <router-outlet></router-outlet>
